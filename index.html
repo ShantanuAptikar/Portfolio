@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Shantanu Aptikar | AI & ML Portfolio - Computer Engineering graduate passionate about Python, Artificial Intelligence and Machine Learning">
+    <meta name="theme-color" content="#10b981">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Shantanu Aptikar |Artificial Intelligence and Machine Learning Portfolio">
+    <meta property="og:description" content="Premium portfolio showcasing AI, Artificial Intelligence, and Machine Learning projects">
+    <meta property="og:image" content="assets/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Shantanu Aptikar | AI & Artificial Intelligence Portfolio">
+    <meta name="twitter:description" content="Premium portfolio showcasing AI, Artificial Intelligence, and Machine Learning projects">
+    
+    <title>Shantanu Aptikar | Artificial Intelligence and Machine Learning Portfolio</title>F
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        emerald: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            200: '#bbf7d0',
+                            300: '#86efac',
+                            400: '#4ade80',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            700: '#15803d',
+                            800: '#166534',
+                            900: '#145231',
+                        },
+                        'deep-emerald': '#0f766e',
+                        'warm-gray': '#78716c',
+                        'subtle-coral': '#f97316',
+                    },
+                    fontFamily: {
+                        'display': ['Space Grotesk', 'sans-serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'glow': 'glow 3s ease-in-out infinite',
+                        'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        glow: {
+                            '0%, 100%': { boxShadow: '0 0 20px rgba(16, 185, 129, 0.3)' },
+                            '50%': { boxShadow: '0 0 40px rgba(16, 185, 129, 0.6)' },
+                        },
+                        'pulse-glow': {
+                            '0%, 100%': { opacity: '0.3' },
+                            '50%': { opacity: '1' },
+                        },
+                    },
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-900 text-white overflow-x-hidden" style="font-family: 'Inter', sans-serif;">
+    
+    <!-- Custom Cursor -->
+    <div class="cursor-glow"></div>
+    
+    <!-- Animated Background -->
+    <canvas id="backgroundCanvas" class="fixed top-0 left-0 w-full h-full -z-50"></canvas>
+    
+    <!-- Navigation Bar -->
+    <nav class="navbar fixed top-0 left-0 right-0 z-40 transition-all duration-300" style="background: rgba(17, 24, 39, 0.7); backdrop-filter: blur(10px);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="#home" class="text-2xl font-bold text-emerald-400" style="font-family: 'Space Grotesk', sans-serif;">SA</a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="nav-link text-sm font-medium hover:text-emerald-400 transition-colors">Home</a>
+                    <a href="#about" class="nav-link text-sm font-medium hover:text-emerald-400 transition-colors">About</a>
+                    <a href="#skills" class="nav-link text-sm font-medium hover:text-emerald-400 transition-colors">Skills</a>
+                    <a href="#projects" class="nav-link text-sm font-medium hover:text-emerald-400 transition-colors">Projects</a>
+                    <a href="#experience" class="nav-link text-sm font-medium hover:text-emerald-400 transition-colors">Experience</a>
+                    <a href="#contact" class="nav-link text-sm font-medium hover:text-emerald-400 transition-colors">Contact</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobileMenuBtn" class="md:hidden text-emerald-400 text-2xl">☰</button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden pb-4 px-4 bg-gray-800 border-t border-emerald-400/20">
+            <a href="#home" class="block py-2 text-sm font-medium hover:text-emerald-400 transition-colors">Home</a>
+            <a href="#about" class="block py-2 text-sm font-medium hover:text-emerald-400 transition-colors">About</a>
+            <a href="#skills" class="block py-2 text-sm font-medium hover:text-emerald-400 transition-colors">Skills</a>
+            <a href="#projects" class="block py-2 text-sm font-medium hover:text-emerald-400 transition-colors">Projects</a>
+            <a href="#experience" class="block py-2 text-sm font-medium hover:text-emerald-400 transition-colors">Experience</a>
+            <a href="#contact" class="block py-2 text-sm font-medium hover:text-emerald-400 transition-colors">Contact</a>
+        </div>
+    </nav>
+    
+    <!-- Hero Section -->
+    <section id="home" class="hero-section relative w-full h-screen flex items-center overflow-hidden">
+        <!-- Video Background -->
+        <div class="hero-video-container absolute inset-0 w-full h-full">
+            <video
+                class="w-full h-full object-cover"
+                autoplay
+                muted
+                loop
+                playsinline
+                style="object-position: right center;"
+            >
+                <source src="assets/avatar-video.mp4" type="video/mp4">
+                <p>Your browser doesn't support HTML5 video. Please use a modern browser.</p>
+            </video>
+            <!-- Gradient Overlay -->
+            <div class="absolute inset-0" style="background: linear-gradient(90deg, rgba(17, 24, 39, 0.8) 0%, rgba(17, 24, 39, 0.6) 40%, rgba(17, 24, 39, 0) 100%);"></div>
+        </div>
+        
+        <!-- Hero Content -->
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="max-w-2xl">
+                <!-- Pre-heading -->
+                <div class="hero-text-animation mb-4 flex items-center space-x-2">
+                    <div class="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
+                    <p class="text-emerald-400 text-sm font-semibold uppercase tracking-wider">Welcome to My Portfolio</p>
+                </div>
+                
+                <!-- Main Heading -->
+                <h1 class="hero-text-animation text-5xl md:text-7xl font-bold mb-4" style="font-family: 'Space Grotesk', sans-serif; animation-delay: 0.1s;">
+                    Hi, I'm <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-purple-400">Shantanu Aptikar</span>
+                </h1>
+                
+                <!-- Subheading -->
+                <h2 class="hero-text-animation text-3xl md:text-4xl font-semibold mb-6 text-gray-300" style="animation-delay: 0.2s;">
+                    AI & ML Enthusiast
+                </h2>
+                
+                <!-- Description -->
+                <p class="hero-text-animation text-lg md:text-xl text-gray-400 mb-8 max-w-xl" style="animation-delay: 0.3s;">
+                    Computer Engineering graduate passionate about Python, Artificial Intelligence and Machine Learning. 
+                    Building intelligent solutions at the intersection of AI and real-world problems.
+                </p>
+                
+                <!-- CTA Buttons -->
+                <div class="hero-text-animation flex flex-wrap gap-4 mb-12" style="animation-delay: 0.4s;">
+                    <a href="#projects" class="premium-btn premium-btn-primary">
+                        <span>View My Projects</span>
+                    </a>
+                    <a href="assets/resume.pdf" download class="premium-btn premium-btn-secondary">
+                        <span>Download Resume</span>
+                    </a>
+                    <a href="#contact" class="premium-btn premium-btn-tertiary">
+                        <span>Let's Connect</span>
+                    </a>
+                </div>
+                
+                <!-- Social Links -->
+                <div class="hero-text-animation flex space-x-6" style="animation-delay: 0.5s;">
+                    <a href="https://github.com/ShantanuAptikar" target="_blank" rel="noopener noreferrer" class="group inline-block">
+                        <div class="social-icon">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v 3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </div>
+                    </a>
+                    <a href="https://linkedin.com/in/shantanu-aptikar-55b445252" target="_blank" rel="noopener noreferrer" class="group inline-block">
+                        <div class="social-icon">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                            </svg>
+                        </div>
+                    </a>
+                    <a href="mailto:shantanuaptikar1202@gmail.com" class="group inline-block">
+                        <div class="social-icon">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                            </svg>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
+            <div class="flex flex-col items-center animate-bounce">
+                <p class="text-gray-400 text-xs mb-2 uppercase tracking-widest">Scroll to explore</p>
+                <svg class="w-5 h-5 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                </svg>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section id="about" class="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-900 to-gray-800">
+        <div class="max-w-7xl mx-auto">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h2 class="section-title text-4xl md:text-5xl font-bold mb-4" style="font-family: 'Space Grotesk', sans-serif;">
+                    About <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-purple-400">Me</span>
+                </h2>
+                <p class="text-gray-400 text-lg max-w-2xl mx-auto">
+                    Explore my journey, skills, and passion for AI and Machine Learning
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <!-- About Content -->
+                <div class="about-content">
+                    <p class="text-gray-300 text-lg leading-relaxed mb-6">
+                        I'm a Computer Engineering graduate from Dr. D.Y. Patil College of Engineering and Innovation 
+                        with a deep passion for Python, Artificial Intelligence, and Machine Learning. My journey began with Python fundamentals 
+                        and has evolved into building intelligent systems that solve real-world problems.
+                    </p>
+                    <p class="text-gray-300 text-lg leading-relaxed mb-6">
+                        My expertise spans data cleaning, exploratory data analysis, feature engineering, and machine learning 
+                        implementation. I combine technical knowledge with problem-solving skills to create innovative solutions 
+                        in the AI/ML space.
+                    </p>
+                    <p class="text-gray-300 text-lg leading-relaxed">
+                        Currently seeking opportunities to leverage my skills in AI/ML, and Python development 
+                        to contribute to cutting-edge projects and grow as a professional in the field.
+                    </p>
+                </div>
+                
+                <!-- Stats Grid -->
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="about-card glass-card p-8 rounded-xl hover-lift" style="border: 1px solid rgba(16, 185, 129, 0.3);">
+                        <div class="text-3xl font-bold text-emerald-400 mb-2" style="font-family: 'Space Grotesk', sans-serif;">
+                            Python
+                        </div>
+                        <p class="text-gray-400">Core Language</p>
+                    </div>
+                    <div class="about-card glass-card p-8 rounded-xl hover-lift" style="border: 1px solid rgba(147, 51, 234, 0.3);">
+                        <div class="text-3xl font-bold text-purple-400 mb-2" style="font-family: 'Space Grotesk', sans-serif;">
+                            ML
+                        </div>
+                        <p class="text-gray-400">Machine Learning</p>
+                    </div>
+                    <div class="about-card glass-card p-8 rounded-xl hover-lift" style="border: 1px solid rgba(217, 70, 239, 0.3);">
+                        <div class="text-3xl font-bold text-fuchsia-400 mb-2" style="font-family: 'Space Grotesk', sans-serif;">
+                            AI
+                        </div>
+                        <p class="text-gray-400">Artificial Intelligence</p>
+                    </div>
+                    <div class="about-card glass-card p-8 rounded-xl hover-lift" style="border: 1px solid rgba(217, 119, 6, 0.3);">
+                        <div class="text-3xl font-bold text-amber-500 mb-2" style="font-family: 'Space Grotesk', sans-serif;">
+                            Data
+                        </div>
+                        <p class="text-gray-400">Data Analysis</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Skills Section -->
+    <section id="skills" class="relative py-20 px-4 sm:px-6 lg:px-8 bg-gray-900">
+        <div class="max-w-7xl mx-auto">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h2 class="section-title text-4xl md:text-5xl font-bold mb-4" style="font-family: 'Space Grotesk', sans-serif;">
+                    Technical <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-purple-400">Skills</span>
+                </h2>
+                <p class="text-gray-400 text-lg">Proficiencies and expertise areas</p>
+            </div>
+            
+            <!-- Skills Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Programming -->
+                <div class="skill-card glass-card p-8 rounded-xl border border-emerald-400/30 hover-lift" style="border: 1px solid rgba(16, 185, 129, 0.3);">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="text-xl font-bold text-white" style="font-family: 'Space Grotesk', sans-serif;">Programming</h3>
+                        <div class="skill-icon">
+                            <svg class="w-8 h-8 text-emerald-400" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M9.4 16.6L4.8 12l4.6-4.6L6.6 6 0 12l6.6 6 2.8-2.8zm5.2 0l4.6-4.6-4.6-4.6 2.8-2.8L24 12l-6.6 6 2.8 2.8z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <ul class="space-y-3">
+                        <li class="flex items-center text-gray-300">
+                            <span class="w-2 h-2 bg-emerald-400 rounded-full mr-3"></span>
+                            Python - Working Knowledge
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <span class="w-2 h-2 bg-emerald-400 rounded-full mr-3"></span>
+                            C++ - Familiar
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Data Analysis -->
+                <div class="skill-card glass-card p-8 rounded-xl hover-lift" style="border: 1px solid rgba(147, 51, 234, 0.3);">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="text-xl font-bold text-white" style="font-family: 'Space Grotesk', sans-serif;">Data Analysis</h3>
+                        <div class="skill-icon">
+                            <svg class="w-8 h-8 text-purple-400" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <ul class="space-y-3">
+                        <li class="flex items-center text-gray-300">
+                            <span class="w-2 h-2 bg-purple-400 rounded-full mr-3"></span>
+                            Pandas - Working Knowledge
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <span class="w-2 h-2 bg-purple-400 rounded-full mr-3"></span>
+                            NumPy - Working Knowledge
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <span class="w-2 h-2 bg-purple-400 rounded-full mr-3"></span>
+                            Matplotlib - Familiar
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Machine Learning -->
+                <div class="skill-card glass-card p-8 rounded-xl hover-lift" style="border: 1px solid rgba(217, 70, 239, 0.3);">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="text-xl font-bold text-white" style="font-family: 'Space Grotesk', sans-serif;">Machine Learning</h3>
+                        <div class="skill-icon">
+                            <svg class="w-8 h-8 text-fuchsia-400" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <ul class="space-y-3">
+                        <li class="flex items-center text-gray-300">
+                            <span class="w-2 h-2 bg-fuchsia-400 rounded-full mr-3"></span>
+                            Data Cleaning & EDA - Working Knowledge
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <span class="w-2 h-2 bg-fuchsia-400 rounded-full mr-3"></span>
+                            Feature Engineering - Familiar
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <span class="w-2 h-2 bg-fuchsia-400 rounded-full mr-3"></span>
+                            Scikit-Learn - Familiar
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Web Technologies -->
+                <div class="skill-card glass-card p-8 rounded-xl hover-lift" style="border: 1px solid rgba(217, 119, 6, 0.3);">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="text-xl font-bold text-white" style="font-family: 'Space Grotesk', sans-serif;">Web</h3>
+                        <div class="skill-icon">
+                            <svg class="w-8 h-8 text-amber-500" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <ul class="space-y-3">
+                        <li class="flex items-center text-gray-300">
+                            <span class="w-2 h-2 bg-amber-500 rounded-full mr-3"></span>
+                            HTML5 - Working Knowledge
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <span class="w-2 h-2 bg-amber-500 rounded-full mr-3"></span>
+                            CSS/Tailwind - Familiar
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Tools -->
+                <div class="skill-card glass-card p-8 rounded-xl hover-lift" style="border: 1px solid rgba(236, 72, 153, 0.3);">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="text-xl font-bold text-white" style="font-family: 'Space Grotesk', sans-serif;">Tools</h3>
+                        <div class="skill-icon">
+                            <svg class="w-8 h-8 text-pink-400" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M19.43 12.98c.04-.32.07-.64.07-.98s-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C14.46 2.18 14.25 2 14 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.22-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98s.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.23.09.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zM12 15.5c-1.93 0-3.5-1.57-3.5-3.5s1.57-3.5 3.5-3.5 3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <ul class="space-y-3">
+                        <li class="flex items-center text-gray-300">
+                            <span class="w-2 h-2 bg-pink-400 rounded-full mr-3"></span>
+                            Jupyter Notebook
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <span class="w-2 h-2 bg-pink-400 rounded-full mr-3"></span>
+                            GitHub & Git
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <span class="w-2 h-2 bg-pink-400 rounded-full mr-3"></span>
+                            VS Code
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Soft Skills -->
+                <div class="skill-card glass-card p-8 rounded-xl hover-lift" style="border: 1px solid rgba(34, 197, 94, 0.3);">
+                    <div class="flex items-center justify-between mb-6">
+                        <h3 class="text-xl font-bold text-white" style="font-family: 'Space Grotesk', sans-serif;">Soft Skills</h3>
+                        <div class="skill-icon">
+                            <svg class="w-8 h-8 text-green-400" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                            </svg>
+                        </div>
+                    </div>
+                    <ul class="space-y-3">
+                        <li class="flex items-center text-gray-300">
+                            <span class="w-2 h-2 bg-green-400 rounded-full mr-3"></span>
+                            Teamwork & Collaboration
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <span class="w-2 h-2 bg-green-400 rounded-full mr-3"></span>
+                            Problem Solving
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <span class="w-2 h-2 bg-green-400 rounded-full mr-3"></span>
+                            Communication & Quick Learner
+                        </li>
+                    </ul>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    <!-- Projects Section -->
+    <section id="projects" class="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-900 to-gray-800">
+        <div class="max-w-7xl mx-auto">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h2 class="section-title text-4xl md:text-5xl font-bold mb-4" style="font-family: 'Space Grotesk', sans-serif;">
+                    Featured <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-purple-400">Projects</span>
+                </h2>
+                <p class="text-gray-400 text-lg">Showcasing my work in Artificial Intelligence and Machine Learning</p>
+            </div>
+            
+            <!-- Main Project Card -->
+            <div class="project-card glass-card rounded-2xl p-12 mb-16 hover-lift" style="border: 1px solid rgba(16, 185, 129, 0.3); overflow: hidden;">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <!-- Project Info -->
+                    <div>
+                        <div class="inline-block bg-emerald-400/10 text-emerald-400 px-4 py-2 rounded-full text-sm font-semibold mb-6">
+                            🚀 Main Project
+                        </div>
+                        <h3 class="text-3xl md:text-4xl font-bold mb-4" style="font-family: 'Space Grotesk', sans-serif;">
+                            Credit Card Fraud Detection System
+                        </h3>
+                        <p class="text-gray-400 text-lg mb-6">
+                            Advanced fraud detection system combining biometric authentication with machine learning 
+                            to identify fraudulent transactions with a two-tier verification approach.
+                        </p>
+                        
+                        <!-- Two-Gate System Visualization -->
+                        <div class="space-y-4 mb-8">
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-emerald-400/20 rounded-lg flex items-center justify-center text-emerald-400 font-bold">1</div>
+                                <div>
+                                    <p class="font-semibold text-white">Gate 1: Biometric Authentication</p>
+                                    <p class="text-gray-400 text-sm">Face verification using InceptionResnetV1 (FaceNet)</p>
+                                </div>
+                            </div>
+                            <div class="border-l-2 border-emerald-400/30 ml-6 h-4"></div>
+                            <div class="flex items-center space-x-4">
+                                <div class="w-12 h-12 bg-purple-400/20 rounded-lg flex items-center justify-center text-purple-400 font-bold">2</div>
+                                <div>
+                                    <p class="font-semibold text-white">Gate 2: Random Forest Classifier</p>
+                                    <p class="text-gray-400 text-sm">Analyzes transaction properties for fraud risk estimation</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Technologies -->
+                        <div class="mb-8">
+                            <p class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4">Technologies</p>
+                            <div class="flex flex-wrap gap-3">
+                                <span class="px-4 py-2 bg-emerald-400/10 text-emerald-400 rounded-lg text-sm font-medium">Python</span>
+                                <span class="px-4 py-2 bg-purple-400/10 text-purple-400 rounded-lg text-sm font-medium">Machine Learning</span>
+                                <span class="px-4 py-2 bg-fuchsia-400/10 text-fuchsia-400 rounded-lg text-sm font-medium">Face Recognition</span>
+                                <span class="px-4 py-2 bg-amber-500/10 text-amber-500 rounded-lg text-sm font-medium">Scikit-Learn</span>
+                            </div>
+                        </div>
+                        
+                        <!-- CTA Button -->
+                        <a href="https://github.com/ShantanuAptikar/Credit-Card-Fraud-Detection-Project" target="_blank" rel="noopener noreferrer" class="inline-block">
+                            <button class="premium-btn premium-btn-primary">
+                                <span>View on GitHub</span>
+                            </button>
+                        </a>
+                    </div>
+                    
+                    <!-- Visual Representation -->
+                    <div class="hidden lg:flex items-center justify-center">
+                        <div class="project-flow w-full max-w-sm">
+                            <div class="space-y-8">
+                                <!-- Flow Start -->
+                                <div class="text-center">
+                                    <div class="w-20 h-20 bg-gradient-to-br from-emerald-400 to-purple-400 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg shadow-emerald-400/50">
+                                        <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                                        </svg>
+                                    </div>
+                                    <p class="text-white font-semibold">User</p>
+                                </div>
+                                
+                                <!-- Arrow -->
+                                <div class="flex justify-center">
+                                    <svg class="w-6 h-6 text-emerald-400 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                                    </svg>
+                                </div>
+                                
+                                <!-- Face Verification -->
+                                <div class="text-center">
+                                    <div class="w-20 h-20 bg-gradient-to-br from-emerald-400 to-cyan-400 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg shadow-emerald-400/50">
+                                        <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                                        </svg>
+                                    </div>
+                                    <p class="text-white font-semibold">Face Verification</p>
+                                    <p class="text-gray-400 text-xs mt-1">FaceNet</p>
+                                </div>
+                                
+                                <!-- Arrow -->
+                                <div class="flex justify-center">
+                                    <svg class="w-6 h-6 text-purple-400 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                                    </svg>
+                                </div>
+                                
+                                <!-- Transaction Analysis -->
+                                <div class="text-center">
+                                    <div class="w-20 h-20 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg shadow-purple-400/50">
+                                        <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
+                                        </svg>
+                                    </div>
+                                    <p class="text-white font-semibold">Transaction Analysis</p>
+                                    <p class="text-gray-400 text-xs mt-1">Random Forest</p>
+                                </div>
+                                
+                                <!-- Arrow -->
+                                <div class="flex justify-center">
+                                    <svg class="w-6 h-6 text-pink-400 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                                    </svg>
+                                </div>
+                                
+                                <!-- Result -->
+                                <div class="text-center">
+                                    <div class="w-20 h-20 bg-gradient-to-br from-emerald-400 to-green-400 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg shadow-emerald-400/50">
+                                        <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
+                                        </svg>
+                                    </div>
+                                    <p class="text-white font-semibold">Fraud Risk</p>
+                                    <p class="text-gray-400 text-xs mt-1">Assessment</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Experience Section -->
+    <section id="experience" class="relative py-20 px-4 sm:px-6 lg:px-8 bg-gray-900">
+        <div class="max-w-7xl mx-auto">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h2 class="section-title text-4xl md:text-5xl font-bold mb-4" style="font-family: 'Space Grotesk', sans-serif;">
+                    Training & <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-purple-400">Experience</span>
+                </h2>
+            </div>
+            
+            <!-- Timeline -->
+            <div class="max-w-3xl mx-auto">
+                <div class="relative">
+                    <!-- Timeline Line -->
+                    <div class="absolute left-0 md:left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-emerald-400 to-purple-400 md:transform md:-translate-x-1/2"></div>
+                    
+                    <!-- Timeline Item -->
+                    <div class="mb-12 md:mb-16">
+                        <div class="flex flex-col md:flex-row md:gap-12">
+                            <!-- Timeline Dot -->
+                            <div class="absolute left-0 md:left-1/2 top-0 w-4 h-4 bg-emerald-400 rounded-full transform -translate-x-1.5 md:transform md:-translate-x-2 md:-translate-y-1/2 border-4 border-gray-900"></div>
+                            
+                            <!-- Content Left -->
+                            <div class="ml-8 md:ml-0 md:w-1/2 md:text-right">
+                                <div class="timeline-card glass-card p-8 rounded-xl hover-lift" style="border: 1px solid rgba(16, 185, 129, 0.3);">
+                                    <div class="inline-block bg-emerald-400/10 text-emerald-400 px-3 py-1 rounded-full text-xs font-semibold mb-3 md:float-right md:ml-4">
+                                        Dec 2023 – Feb 2024
+                                    </div>
+                                    <h3 class="text-xl font-bold text-white mb-2" style="font-family: 'Space Grotesk', sans-serif;">
+                                        Python Training
+                                    </h3>
+                                    <p class="text-gray-400 font-semibold mb-4">Elite Softwares, Pune</p>
+                                    <ul class="text-gray-300 text-sm space-y-2">
+                                        <li class="flex items-start">
+                                            <span class="w-2 h-2 bg-emerald-400 rounded-full mr-3 mt-1.5 flex-shrink-0"></span>
+                                            <span>Python programming fundamentals and best practices</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <span class="w-2 h-2 bg-emerald-400 rounded-full mr-3 mt-1.5 flex-shrink-0"></span>
+                                            <span>Basic Django framework concepts</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <span class="w-2 h-2 bg-emerald-400 rounded-full mr-3 mt-1.5 flex-shrink-0"></span>
+                                            <span>Practical applications: Calculator, Contacts Book, To-Do List</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Education Section -->
+    <section id="education" class="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-900 to-gray-800">
+        <div class="max-w-7xl mx-auto">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h2 class="section-title text-4xl md:text-5xl font-bold mb-4" style="font-family: 'Space Grotesk', sans-serif;">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-purple-400">Education</span>
+                </h2>
+            </div>
+            
+            <!-- Education Card -->
+            <div class="max-w-2xl mx-auto">
+                <div class="education-card glass-card p-12 rounded-2xl hover-lift" style="border: 1px solid rgba(147, 51, 234, 0.3);">
+                    <div class="flex items-start justify-between mb-6">
+                        <div>
+                            <div class="inline-block bg-purple-400/10 text-purple-400 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                                🎓 Degree
+                            </div>
+                            <h3 class="text-3xl font-bold text-white mb-2" style="font-family: 'Space Grotesk', sans-serif;">
+                                B.E. Computer Engineering
+                            </h3>
+                            <p class="text-gray-300 text-lg font-semibold mb-1">
+                                Dr. D.Y. Patil College of Engineering and Innovation
+                            </p>
+                            <p class="text-gray-400">Pune University</p>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-4xl font-bold text-purple-400" style="font-family: 'Space Grotesk', sans-serif;">
+                                6.44
+                            </div>
+                            <p class="text-gray-400 text-sm">CGPA</p>
+                        </div>
+                    </div>
+                    
+                    <div class="border-t border-purple-400/20 pt-6">
+                        <p class="text-gray-300 leading-relaxed">
+                            Comprehensive education in computer engineering with focus on AI / ML, 
+                            data structures, algorithms, and emerging technologies. Strong foundation in mathematics, 
+                            physics, and programming principles.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Certificates Section -->
+    <section class="relative py-20 px-4 sm:px-6 lg:px-8 bg-gray-900">
+        <div class="max-w-7xl mx-auto">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h2 class="section-title text-4xl md:text-5xl font-bold mb-4" style="font-family: 'Space Grotesk', sans-serif;">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-purple-400">Certificates</span>
+                </h2>
+            </div>
+            
+            <!-- Certificates Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <!-- Certificate 1 -->
+                <div class="certificate-card glass-card p-8 rounded-xl hover-lift text-center" style="border: 1px solid rgba(16, 185, 129, 0.3);">
+                    <div class="inline-block w-16 h-16 bg-emerald-400/10 rounded-full flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-emerald-400" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M21 16v-5h-3V4c0-.55-.45-1-1-1H3c-.55 0-1 .45-1 1v12c0 .55.45 1 1 1h14v5l4-3z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2" style="font-family: 'Space Grotesk', sans-serif;">
+                        Python Training
+                    </h3>
+                    <p class="text-gray-400 font-semibold mb-3">Elite Softwares, Pune</p>
+                    <p class="text-gray-500 text-sm">
+                        Certification for completing Python programming fundamentals and Django basics training program.
+                    </p>
+                </div>
+                
+                <!-- Certificate 2 -->
+                <div class="certificate-card glass-card p-8 rounded-xl hover-lift text-center" style="border: 1px solid rgba(147, 51, 234, 0.3);">
+                    <div class="inline-block w-16 h-16 bg-purple-400/10 rounded-full flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-purple-400" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M21 16v-5h-3V4c0-.55-.45-1-1-1H3c-.55 0-1 .45-1 1v12c0 .55.45 1 1 1h14v5l4-3z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2" style="font-family: 'Space Grotesk', sans-serif;">
+                        Basic Python Certificate
+                    </h3>
+                    <p class="text-gray-400 font-semibold mb-3">HackerRank</p>
+                    <p class="text-gray-500 text-sm">
+                        Certification for successfully completing Python basic programming challenges and assessments.
+                    </p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-900 to-gray-800">
+        <div class="max-w-7xl mx-auto">
+            <!-- Section Header -->
+            <div class="text-center mb-16">
+                <h2 class="section-title text-4xl md:text-5xl font-bold mb-4" style="font-family: 'Space Grotesk', sans-serif;">
+                    Let's <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-purple-400">Connect</span>
+                </h2>
+                <p class="text-gray-400 text-lg">Open to opportunities and collaborations</p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                
+                <!-- Contact Info -->
+                <div class="space-y-8">
+                    <!-- Email -->
+                    <div class="contact-info-card glass-card p-8 rounded-xl hover-lift" style="border: 1px solid rgba(16, 185, 129, 0.3);">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-emerald-400/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-emerald-400" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-gray-400 text-sm uppercase tracking-wider">Email</p>
+                                <a href="mailto:shantanuaptikar1202@gmail.com" class="text-lg font-semibold text-white hover:text-emerald-400 transition-colors">
+                                    shantanuaptikar1202@gmail.com
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Phone -->
+                    <div class="contact-info-card glass-card p-8 rounded-xl hover-lift" style="border: 1px solid rgba(147, 51, 234, 0.3);">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-purple-400/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-purple-400" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M17.92 7.02C17.45 6.18 16.49 5.5 15.41 5.5h-6.82c-1.08 0-2.05.68-2.51 1.52C5.04 7.81 4 10.33 4 13s1.04 5.19 1.08 5.98c.46.84 1.43 1.52 2.51 1.52h6.82c1.08 0 2.05-.68 2.51-1.52.04-.79 1.08-3.31 1.08-5.98s-1.04-5.19-1.08-5.98zM14.6 15H9.4V9h5.2v6z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-gray-400 text-sm uppercase tracking-wider">Phone</p>
+                                <a href="tel:+917038174659" class="text-lg font-semibold text-white hover:text-purple-400 transition-colors">
+                                    +91-7038174659
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Location -->
+                    <div class="contact-info-card glass-card p-8 rounded-xl hover-lift" style="border: 1px solid rgba(217, 70, 239, 0.3);">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 bg-fuchsia-400/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6 text-fuchsia-400" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm0-13c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-gray-400 text-sm uppercase tracking-wider">Location</p>
+                                <p class="text-lg font-semibold text-white">
+                                    Pune, Maharashtra
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Social Links -->
+                    <div class="flex space-x-6">
+                        <a href="https://github.com/ShantanuAptikar" target="_blank" rel="noopener noreferrer" class="group inline-block">
+                            <div class="social-icon-large">
+                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v 3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                </svg>
+                            </div>
+                        </a>
+                        <a href="https://linkedin.com/in/shantanu-aptikar-55b445252" target="_blank" rel="noopener noreferrer" class="group inline-block">
+                            <div class="social-icon-large">
+                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                                </svg>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="contact-form glass-card p-8 rounded-xl" style="border: 1px solid rgba(16, 185, 129, 0.3);">
+                    <form id="contactForm" class="space-y-6">
+                        <!-- Name -->
+                        <div>
+                            <label for="name" class="block text-sm font-semibold text-gray-300 mb-2">Name</label>
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                placeholder="Your name"
+                                required
+                                class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/20 transition-all"
+                            />
+                        </div>
+                        
+                        <!-- Email -->
+                        <div>
+                            <label for="email" class="block text-sm font-semibold text-gray-300 mb-2">Email</label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="your@email.com"
+                                required
+                                class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/20 transition-all"
+                            />
+                        </div>
+                        
+                        <!-- Message -->
+                        <div>
+                            <label for="message" class="block text-sm font-semibold text-gray-300 mb-2">Message</label>
+                            <textarea
+                                id="message"
+                                name="message"
+                                placeholder="Your message..."
+                                rows="5"
+                                required
+                                class="w-full px-4 py-3 bg-gray-800 border border-gray-700 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-emerald-400 focus:ring-2 focus:ring-emerald-400/20 transition-all resize-none"
+                            ></textarea>
+                        </div>
+                        
+                        <!-- Submit Button -->
+                        <button type="submit" class="premium-btn premium-btn-primary w-full">
+                            <span>Send Message</span>
+                        </button>
+                        
+                        <!-- Form Status -->
+                        <div id="formStatus" class="hidden p-4 rounded-lg text-center font-semibold"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="relative py-12 px-4 sm:px-6 lg:px-8 bg-gray-900 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto text-center">
+            <p class="text-gray-400 mb-4">
+                © 2024 Shantanu Aptikar. All rights reserved.
+            </p>
+            <p class="text-gray-500 text-sm">
+                Built with HTML5, Tailwind CSS, and Vanilla JavaScript
+            </p>
+        </div>
+    </footer>
+    
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
