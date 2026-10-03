@@ -163,7 +163,7 @@
                     <a href="#projects" class="premium-btn premium-btn-primary">
                         <span>View My Projects</span>
                     </a>
-                    <a href="assets/resume.pdf" download class="premium-btn premium-btn-secondary">
+                    <a href="assets/Shantanu resume resume.pdf" download class="premium-btn premium-btn-secondary">
                         <span>Download Resume</span>
                     </a>
                     <a href="#contact" class="premium-btn premium-btn-tertiary">
@@ -439,144 +439,578 @@
     </section>
     
     <!-- Projects Section -->
-    <section id="projects" class="relative py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-900 to-gray-800">
-        <div class="max-w-7xl mx-auto">
-            <!-- Section Header -->
-            <div class="text-center mb-16">
-                <h2 class="section-title text-4xl md:text-5xl font-bold mb-4" style="font-family: 'Space Grotesk', sans-serif;">
-                    Featured <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-purple-400">Projects</span>
-                </h2>
-                <p class="text-gray-400 text-lg">Showcasing my work in Artificial Intelligence and Machine Learning</p>
-            </div>
-            
-            <!-- Main Project Card -->
-            <div class="project-card glass-card rounded-2xl p-12 mb-16 hover-lift" style="border: 1px solid rgba(16, 185, 129, 0.3); overflow: hidden;">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                    <!-- Project Info -->
-                    <div>
-                        <div class="inline-block bg-emerald-400/10 text-emerald-400 px-4 py-2 rounded-full text-sm font-semibold mb-6">
-                            🚀 Main Project
-                        </div>
-                        <h3 class="text-3xl md:text-4xl font-bold mb-4" style="font-family: 'Space Grotesk', sans-serif;">
-                            Credit Card Fraud Detection System
-                        </h3>
-                        <p class="text-gray-400 text-lg mb-6">
-                            Advanced fraud detection system combining biometric authentication with machine learning 
-                            to identify fraudulent transactions with a two-tier verification approach.
-                        </p>
-                        
-                        <!-- Two-Gate System Visualization -->
-                        <div class="space-y-4 mb-8">
-                            <div class="flex items-center space-x-4">
-                                <div class="w-12 h-12 bg-emerald-400/20 rounded-lg flex items-center justify-center text-emerald-400 font-bold">1</div>
-                                <div>
-                                    <p class="font-semibold text-white">Gate 1: Biometric Authentication</p>
-                                    <p class="text-gray-400 text-sm">Face verification using InceptionResnetV1 (FaceNet)</p>
+    <section id="projects" class="py-24 bg-slate-950">
+    <div class="max-w-7xl mx-auto px-6">
+
+        <!-- Section Heading -->
+        <div class="text-center mb-16">
+            <span class="text-emerald-400 font-semibold tracking-wider uppercase text-sm">
+                My Work
+            </span>
+
+            <h2 class="text-4xl md:text-5xl font-bold text-white mt-3">
+                Featured Projects
+            </h2>
+
+            <p class="text-slate-400 max-w-2xl mx-auto mt-5">
+                A collection of machine learning and AI projects built using Python,
+                Scikit-Learn, Streamlit and related technologies.
+            </p>
+        </div>
+
+
+        <!-- =========================
+             FEATURED PROJECT
+        ========================= -->
+        <div class="mb-16">
+            <div class="bg-slate-900/80 border border-emerald-500/20 rounded-3xl overflow-hidden
+                        hover:border-emerald-400/50 transition-all duration-300">
+
+                <div class="grid lg:grid-cols-2 gap-0">
+
+                    <!-- Project Visual -->
+                    <div class="p-8 lg:p-10 flex items-center justify-center
+                                bg-gradient-to-br from-emerald-500/10 to-purple-500/10">
+
+                        <div class="w-full max-w-lg">
+
+                            <div class="text-center mb-8">
+                                <div class="inline-flex items-center justify-center
+                                            w-20 h-20 rounded-2xl
+                                            bg-emerald-500/10 border border-emerald-400/20">
+                                    <i data-lucide="shield-check"
+                                       class="w-10 h-10 text-emerald-400"></i>
                                 </div>
                             </div>
-                            <div class="border-l-2 border-emerald-400/30 ml-6 h-4"></div>
-                            <div class="flex items-center space-x-4">
-                                <div class="w-12 h-12 bg-purple-400/20 rounded-lg flex items-center justify-center text-purple-400 font-bold">2</div>
-                                <div>
-                                    <p class="font-semibold text-white">Gate 2: Random Forest Classifier</p>
-                                    <p class="text-gray-400 text-sm">Analyzes transaction properties for fraud risk estimation</p>
+
+                            <div class="space-y-4">
+
+                                <div class="flex items-center gap-4 p-4 rounded-xl
+                                            bg-slate-800/70 border border-slate-700">
+                                    <div class="w-11 h-11 rounded-lg bg-purple-500/10
+                                                flex items-center justify-center">
+                                        <i data-lucide="scan-face"
+                                           class="w-6 h-6 text-purple-400"></i>
+                                    </div>
+
+                                    <div>
+                                        <p class="text-white font-semibold">
+                                            Face Verification
+                                        </p>
+                                        <p class="text-slate-400 text-sm">
+                                            FaceNet / InceptionResnetV1
+                                        </p>
+                                    </div>
                                 </div>
+
+                                <div class="flex justify-center">
+                                    <i data-lucide="arrow-down"
+                                       class="text-emerald-400 w-6 h-6"></i>
+                                </div>
+
+                                <div class="flex items-center gap-4 p-4 rounded-xl
+                                            bg-slate-800/70 border border-slate-700">
+                                    <div class="w-11 h-11 rounded-lg bg-emerald-500/10
+                                                flex items-center justify-center">
+                                        <i data-lucide="brain"
+                                           class="w-6 h-6 text-emerald-400"></i>
+                                    </div>
+
+                                    <div>
+                                        <p class="text-white font-semibold">
+                                            Transaction Risk Analysis
+                                        </p>
+                                        <p class="text-slate-400 text-sm">
+                                            Random Forest Machine Learning
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="flex justify-center">
+                                    <i data-lucide="arrow-down"
+                                       class="text-emerald-400 w-6 h-6"></i>
+                                </div>
+
+                                <div class="flex items-center gap-4 p-4 rounded-xl
+                                            bg-slate-800/70 border border-slate-700">
+                                    <div class="w-11 h-11 rounded-lg bg-red-500/10
+                                                flex items-center justify-center">
+                                        <i data-lucide="shield-alert"
+                                           class="w-6 h-6 text-red-400"></i>
+                                    </div>
+
+                                    <div>
+                                        <p class="text-white font-semibold">
+                                            Fraud Risk Assessment
+                                        </p>
+                                        <p class="text-slate-400 text-sm">
+                                            Secure transaction authentication
+                                        </p>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
-                        
-                        <!-- Technologies -->
-                        <div class="mb-8">
-                            <p class="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4">Technologies</p>
-                            <div class="flex flex-wrap gap-3">
-                                <span class="px-4 py-2 bg-emerald-400/10 text-emerald-400 rounded-lg text-sm font-medium">Python</span>
-                                <span class="px-4 py-2 bg-purple-400/10 text-purple-400 rounded-lg text-sm font-medium">Machine Learning</span>
-                                <span class="px-4 py-2 bg-fuchsia-400/10 text-fuchsia-400 rounded-lg text-sm font-medium">Face Recognition</span>
-                                <span class="px-4 py-2 bg-amber-500/10 text-amber-500 rounded-lg text-sm font-medium">Scikit-Learn</span>
-                            </div>
-                        </div>
-                        
-                        <!-- CTA Button -->
-                        <a href="https://github.com/ShantanuAptikar/Credit-Card-Fraud-Detection-Project" target="_blank" rel="noopener noreferrer" class="inline-block">
-                            <button class="premium-btn premium-btn-primary">
-                                <span>View on GitHub</span>
-                            </button>
-                        </a>
                     </div>
-                    
-                    <!-- Visual Representation -->
-                    <div class="hidden lg:flex items-center justify-center">
-                        <div class="project-flow w-full max-w-sm">
-                            <div class="space-y-8">
-                                <!-- Flow Start -->
-                                <div class="text-center">
-                                    <div class="w-20 h-20 bg-gradient-to-br from-emerald-400 to-purple-400 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg shadow-emerald-400/50">
-                                        <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
-                                            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                                        </svg>
-                                    </div>
-                                    <p class="text-white font-semibold">User</p>
-                                </div>
-                                
-                                <!-- Arrow -->
-                                <div class="flex justify-center">
-                                    <svg class="w-6 h-6 text-emerald-400 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-                                    </svg>
-                                </div>
-                                
-                                <!-- Face Verification -->
-                                <div class="text-center">
-                                    <div class="w-20 h-20 bg-gradient-to-br from-emerald-400 to-cyan-400 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg shadow-emerald-400/50">
-                                        <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
-                                            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                                        </svg>
-                                    </div>
-                                    <p class="text-white font-semibold">Face Verification</p>
-                                    <p class="text-gray-400 text-xs mt-1">FaceNet</p>
-                                </div>
-                                
-                                <!-- Arrow -->
-                                <div class="flex justify-center">
-                                    <svg class="w-6 h-6 text-purple-400 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-                                    </svg>
-                                </div>
-                                
-                                <!-- Transaction Analysis -->
-                                <div class="text-center">
-                                    <div class="w-20 h-20 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg shadow-purple-400/50">
-                                        <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
-                                            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/>
-                                        </svg>
-                                    </div>
-                                    <p class="text-white font-semibold">Transaction Analysis</p>
-                                    <p class="text-gray-400 text-xs mt-1">Random Forest</p>
-                                </div>
-                                
-                                <!-- Arrow -->
-                                <div class="flex justify-center">
-                                    <svg class="w-6 h-6 text-pink-400 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-                                    </svg>
-                                </div>
-                                
-                                <!-- Result -->
-                                <div class="text-center">
-                                    <div class="w-20 h-20 bg-gradient-to-br from-emerald-400 to-green-400 rounded-full flex items-center justify-center mx-auto mb-4 shadow-lg shadow-emerald-400/50">
-                                        <svg class="w-10 h-10 text-white" fill="currentColor" viewBox="0 0 24 24">
-                                            <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
-                                        </svg>
-                                    </div>
-                                    <p class="text-white font-semibold">Fraud Risk</p>
-                                    <p class="text-gray-400 text-xs mt-1">Assessment</p>
-                                </div>
+
+
+                    <!-- Project Details -->
+                    <div class="p-8 lg:p-12">
+
+                        <span class="inline-block px-3 py-1 rounded-full
+                                     bg-emerald-500/10 border border-emerald-400/20
+                                     text-emerald-400 text-xs font-semibold mb-5">
+                            FEATURED PROJECT
+                        </span>
+
+                        <h3 class="text-3xl font-bold text-white mb-5">
+                            A Secure Credit Card Transaction Authentication System
+                            using Face Recognition and Machine Learning
+                        </h3>
+
+                        <p class="text-slate-400 leading-relaxed mb-6">
+                            A secure transaction authentication system that combines
+                            biometric face verification with machine learning based
+                            transaction risk analysis. The system uses a two-stage
+                            verification approach to authenticate users and identify
+                            potentially fraudulent transactions.
+                        </p>
+
+                        <div class="space-y-3 mb-7">
+
+                            <div class="flex gap-3">
+                                <i data-lucide="check-circle"
+                                   class="w-5 h-5 text-emerald-400 mt-0.5 flex-shrink-0"></i>
+
+                                <p class="text-slate-300 text-sm">
+                                    Face verification using FaceNet /
+                                    InceptionResnetV1 embeddings.
+                                </p>
                             </div>
+
+                            <div class="flex gap-3">
+                                <i data-lucide="check-circle"
+                                   class="w-5 h-5 text-emerald-400 mt-0.5 flex-shrink-0"></i>
+
+                                <p class="text-slate-300 text-sm">
+                                    Random Forest based transaction risk analysis.
+                                </p>
+                            </div>
+
+                            <div class="flex gap-3">
+                                <i data-lucide="check-circle"
+                                   class="w-5 h-5 text-emerald-400 mt-0.5 flex-shrink-0"></i>
+
+                                <p class="text-slate-300 text-sm">
+                                    SQLite database integration for transaction
+                                    authentication and storage.
+                                </p>
+                            </div>
+
                         </div>
+
+
+                        <!-- Technologies -->
+                        <div class="flex flex-wrap gap-2 mb-8">
+                            <span class="px-3 py-1 rounded-full bg-slate-800
+                                         text-slate-300 text-xs">
+                                Python
+                            </span>
+
+                            <span class="px-3 py-1 rounded-full bg-slate-800
+                                         text-slate-300 text-xs">
+                                Machine Learning
+                            </span>
+
+                            <span class="px-3 py-1 rounded-full bg-slate-800
+                                         text-slate-300 text-xs">
+                                Face Recognition
+                            </span>
+
+                            <span class="px-3 py-1 rounded-full bg-slate-800
+                                         text-slate-300 text-xs">
+                                FaceNet
+                            </span>
+
+                            <span class="px-3 py-1 rounded-full bg-slate-800
+                                         text-slate-300 text-xs">
+                                Random Forest
+                            </span>
+
+                            <span class="px-3 py-1 rounded-full bg-slate-800
+                                         text-slate-300 text-xs">
+                                SQLite
+                            </span>
+
+                            <span class="px-3 py-1 rounded-full bg-slate-800
+                                         text-slate-300 text-xs">
+                                Scikit-Learn
+                            </span>
+                        </div>
+
+
+                        <!-- GitHub -->
+                        <a href="https://github.com/ShantanuAptikar/Credit-Card-Fraud-Detection-Project"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="inline-flex items-center gap-2 px-5 py-3
+                                  rounded-xl bg-emerald-500 text-slate-950
+                                  font-semibold hover:bg-emerald-400
+                                  transition-all duration-300">
+
+                            <i data-lucide="github" class="w-5 h-5"></i>
+                            View on GitHub
+                        </a>
+
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+
+
+        <!-- =========================
+             OTHER PROJECTS
+        ========================= -->
+        <div class="grid md:grid-cols-2 xl:grid-cols-2 gap-7">
+
+
+            <!-- =========================
+                 TITANIC PROJECT
+            ========================= -->
+            <div class="group bg-slate-900/80 border border-slate-800
+                        rounded-2xl p-7 hover:border-emerald-400/40
+                        transition-all duration-300">
+
+                <div class="flex items-start justify-between mb-6">
+
+                    <div class="w-14 h-14 rounded-xl bg-blue-500/10
+                                border border-blue-400/20
+                                flex items-center justify-center">
+
+                        <i data-lucide="ship"
+                           class="w-7 h-7 text-blue-400"></i>
+                    </div>
+
+                    <span class="text-xs font-medium text-emerald-400
+                                 bg-emerald-500/10 px-3 py-1 rounded-full">
+                        DEPLOYED
+                    </span>
+                </div>
+
+
+                <h3 class="text-2xl font-bold text-white mb-3">
+                    Titanic Survival Prediction
+                </h3>
+
+                <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                    Machine learning project that predicts passenger survival
+                    using demographic and travel-related features. Multiple
+                    classification algorithms were implemented and compared.
+                </p>
+
+
+                <div class="flex flex-wrap gap-2 mb-7">
+
+                    <span class="px-3 py-1 rounded-full bg-slate-800
+                                 text-slate-300 text-xs">
+                        Python
+                    </span>
+
+                    <span class="px-3 py-1 rounded-full bg-slate-800
+                                 text-slate-300 text-xs">
+                        Pandas
+                    </span>
+
+                    <span class="px-3 py-1 rounded-full bg-slate-800
+                                 text-slate-300 text-xs">
+                        NumPy
+                    </span>
+
+                    <span class="px-3 py-1 rounded-full bg-slate-800
+                                 text-slate-300 text-xs">
+                        Scikit-Learn
+                    </span>
+
+                    <span class="px-3 py-1 rounded-full bg-slate-800
+                                 text-slate-300 text-xs">
+                        Logistic Regression
+                    </span>
+
+                    <span class="px-3 py-1 rounded-full bg-slate-800
+                                 text-slate-300 text-xs">
+                        SVM
+                    </span>
+
+                    <span class="px-3 py-1 rounded-full bg-slate-800
+                                 text-slate-300 text-xs">
+                        KNN
+                    </span>
+
+                    <span class="px-3 py-1 rounded-full bg-slate-800
+                                 text-slate-300 text-xs">
+                        Streamlit
+                    </span>
+
+                </div>
+
+
+                <a href="https://github.com/ShantanuAptikar/Titanic-Project"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="inline-flex items-center gap-2 text-emerald-400
+                          hover:text-emerald-300 font-medium text-sm">
+
+                    <i data-lucide="external-link" class="w-4 h-4"></i>
+                    View Project
+                </a>
+
+            </div>
+
+
+            <!-- =========================
+                 INDIAN ECONOMY PROJECT
+            ========================= -->
+            <div class="group bg-slate-900/80 border border-slate-800
+                        rounded-2xl p-7 hover:border-emerald-400/40
+                        transition-all duration-300">
+
+                <div class="flex items-start justify-between mb-6">
+
+                    <div class="w-14 h-14 rounded-xl bg-purple-500/10
+                                border border-purple-400/20
+                                flex items-center justify-center">
+
+                        <i data-lucide="trending-up"
+                           class="w-7 h-7 text-purple-400"></i>
+                    </div>
+
+                    <span class="text-xs font-medium text-emerald-400
+                                 bg-emerald-500/10 px-3 py-1 rounded-full">
+                        DEPLOYED
+                    </span>
+                </div>
+
+
+                <h3 class="text-2xl font-bold text-white mb-3">
+                    Indian Economy Imports Prediction
+                </h3>
+
+                <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                    A regression-based machine learning application that predicts
+                    imports in crore using yearly economic data and Linear Regression.
+                </p>
+
+
+                <div class="flex flex-wrap gap-2 mb-7">
+
+                    <span class="px-3 py-1 rounded-full bg-slate-800
+                                 text-slate-300 text-xs">
+                        Python
+                    </span>
+
+                    <span class="px-3 py-1 rounded-full bg-slate-800
+                                 text-slate-300 text-xs">
+                        Pandas
+                    </span>
+
+                    <span class="px-3 py-1 rounded-full bg-slate-800
+                                 text-slate-300 text-xs">
+                        NumPy
+                    </span>
+
+                    <span class="px-3 py-1 rounded-full bg-slate-800
+                                 text-slate-300 text-xs">
+                        Scikit-Learn
+                    </span>
+
+                    <span class="px-3 py-1 rounded-full bg-slate-800
+                                 text-slate-300 text-xs">
+                        Linear Regression
+                    </span>
+
+                    <span class="px-3 py-1 rounded-full bg-slate-800
+                                 text-slate-300 text-xs">
+                        Streamlit
+                    </span>
+
+                </div>
+
+
+                <a href="https://economy-project-ml.streamlit.app/"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="inline-flex items-center gap-2 text-emerald-400
+                          hover:text-emerald-300 font-medium text-sm">
+
+                    <i data-lucide="external-link" class="w-4 h-4"></i>
+                    Live Demo
+                </a>
+
+            </div>
+
+
+            <!-- =========================
+                 CAR PRICE PROJECT
+            ========================= -->
+            <div class="group bg-slate-900/80 border border-slate-800
+                        rounded-2xl p-7 hover:border-emerald-400/40
+                        transition-all duration-300">
+
+                <div class="flex items-start justify-between mb-6">
+
+                    <div class="w-14 h-14 rounded-xl bg-amber-500/10
+                                border border-amber-400/20
+                                flex items-center justify-center">
+
+                        <i data-lucide="car"
+                           class="w-7 h-7 text-amber-400"></i>
+                    </div>
+
+                    <span class="text-xs font-medium text-slate-400
+                                 bg-slate-800 px-3 py-1 rounded-full">
+                        ML PROJECT
+                    </span>
+                </div>
+
+
+                <h3 class="text-2xl font-bold text-white mb-3">
+                    Car Price Prediction
+                </h3>
+
+                <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                    A machine learning regression project that predicts used car
+                    prices using vehicle attributes such as fuel type,
+                    transmission, ownership type and safety rating.
+                </p>
+
+
+                <div class="flex flex-wrap gap-2 mb-7">
+
+                    <span class="px-3 py-1 rounded-full bg-slate-800
+                                 text-slate-300 text-xs">
+                        Python
+                    </span>
+
+                    <span class="px-3 py-1 rounded-full bg-slate-800
+                                 text-slate-300 text-xs">
+                        Pandas
+                    </span>
+
+                    <span class="px-3 py-1 rounded-full bg-slate-800
+                                 text-slate-300 text-xs">
+                        NumPy
+                    </span>
+
+                    <span class="px-3 py-1 rounded-full bg-slate-800
+                                 text-slate-300 text-xs">
+                        Scikit-Learn
+                    </span>
+
+                    <span class="px-3 py-1 rounded-full bg-slate-800
+                                 text-slate-300 text-xs">
+                        Regression
+                    </span>
+
+                    <span class="px-3 py-1 rounded-full bg-slate-800
+                                 text-slate-300 text-xs">
+                        Streamlit
+                    </span>
+
+                </div>
+
+
+                <span class="inline-flex items-center gap-2 text-slate-500
+                             font-medium text-sm">
+
+                    <i data-lucide="clock" class="w-4 h-4"></i>
+                    GitHub / Live Demo coming soon
+                </span>
+
+            </div>
+
+
+            <!-- =========================
+                 CUSTOMER SEGMENTATION
+            ========================= -->
+            <div class="group bg-slate-900/80 border border-slate-800
+                        rounded-2xl p-7 hover:border-emerald-400/40
+                        transition-all duration-300">
+
+                <div class="flex items-start justify-between mb-6">
+
+                    <div class="w-14 h-14 rounded-xl bg-pink-500/10
+                                border border-pink-400/20
+                                flex items-center justify-center">
+
+                        <i data-lucide="users-round"
+                           class="w-7 h-7 text-pink-400"></i>
+                    </div>
+
+                    <span class="text-xs font-medium text-slate-400
+                                 bg-slate-800 px-3 py-1 rounded-full">
+                        ML PROJECT
+                    </span>
+                </div>
+
+
+                <h3 class="text-2xl font-bold text-white mb-3">
+                    Customer Segmentation
+                </h3>
+
+                <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                    An unsupervised machine learning project using K-Means
+                    clustering to segment customers based on demographic,
+                    income and spending behaviour.
+                </p>
+
+
+                <div class="flex flex-wrap gap-2 mb-7">
+
+                    <span class="px-3 py-1 rounded-full bg-slate-800
+                                 text-slate-300 text-xs">
+                        Python
+                    </span>
+
+                    <span class="px-3 py-1 rounded-full bg-slate-800
+                                 text-slate-300 text-xs">
+                        Pandas
+                    </span>
+
+                    <span class="px-3 py-1 rounded-full bg-slate-800
+                                 text-slate-300 text-xs">
+                        NumPy
+                    </span>
+
+                    <span class="px-3 py-1 rounded-full bg-slate-800
+                                 text-slate-300 text-xs">
+                        Scikit-Learn
+                    </span>
+
+                    <span class="px-3 py-1 rounded-full bg-slate-800
+                                 text-slate-300 text-xs">
+                        K-Means
+                    </span>
+
+                    <span class="px-3 py-1 rounded-full bg-slate-800
+                                 text-slate-300 text-xs">
+                        Unsupervised Learning
+                    </span>
+
+                </div>
+
+
+                <span class="inline-flex items-center gap-2 text-slate-500
+                             font-medium text-sm">
+
+                    <i data-lucide="clock" class="w-4 h-4"></i>
+                    GitHub / Live Demo coming soon
+                </span>
+
+            </div>
+
+        </div>
+    </div>
+</section>
     
     <!-- Experience Section -->
     <section id="experience" class="relative py-20 px-4 sm:px-6 lg:px-8 bg-gray-900">
@@ -657,7 +1091,7 @@
                             <p class="text-gray-300 text-lg font-semibold mb-1">
                                 Dr. D.Y. Patil College of Engineering and Innovation
                             </p>
-                            <p class="text-gray-400">Pune University</p>
+                            <p class="text-gray-400">Savitribai Phule Pune University(SPPU)</p>
                         </div>
                         <div class="text-right">
                             <div class="text-4xl font-bold text-purple-400" style="font-family: 'Space Grotesk', sans-serif;">
@@ -872,7 +1306,7 @@
     <footer class="relative py-12 px-4 sm:px-6 lg:px-8 bg-gray-900 border-t border-gray-800">
         <div class="max-w-7xl mx-auto text-center">
             <p class="text-gray-400 mb-4">
-                © 2024 Shantanu Aptikar. All rights reserved.
+                © 2026 Shantanu Aptikar. All rights reserved.
             </p>
             <p class="text-gray-500 text-sm">
                 Built with HTML5, Tailwind CSS, and Vanilla JavaScript
